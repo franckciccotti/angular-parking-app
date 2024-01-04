@@ -12,7 +12,6 @@ export class ParkingService {
   constructor(private httpClient: HttpClient) { }
 
   getParkings(): Observable<ParkingInfo[]> {
-    // return this.httpClient.get<ParkingInfo[]>('http://localhost:8080/api/parkings');
     return this.httpClient.get<ParkingInfo[]>(environment.apiUrl + '/parkings');
   }
 }
