@@ -1,0 +1,23 @@
+<div *ngIf="!isLoaded" class="loaded">
+    <mat-spinner class="spinner" color="accent" diameter="30"></mat-spinner>
+</div>
+
+<div class="card" *ngIf="isLoaded">
+    <mat-card *ngIf="parking" class="parking-detail">
+        <mat-card-header>
+            <mat-card-title>{{parking.nom}}</mat-card-title>
+            <mat-card-subtitle>{{parking.statut}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <span>Places disponibles : {{parking.nbPlacesDispo}}</span><br>
+            <span>Places au total : {{parking.nbPlacesTotal}}</span><br>
+            <span class="italic">Dernières mise en jour à {{parking.heureMaj}}</span>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="icon">
+    <button mat-icon-button [routerLink]="['/parkings']">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+</div>
